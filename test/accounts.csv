@@ -1,0 +1,3 @@
+ASSET,Assets,Assets,A,Asset parent,GBP,T
+ASSET,Assets/CurrentAssets,Current Assets,CA,Current Assets,GBP,T
+BANK,Assets/CurrentAssets/CurrentAccountSole,Sole Bank Account,SBA,Sole Bank Account,GBP,F
