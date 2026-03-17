@@ -2,6 +2,7 @@ from faker import Faker
 import sqlite3
 import os
 import pandas as pd
+import csv
 
 fake = Faker(['en_GB'])
 dbname = '../test/accounting.db'
@@ -39,13 +40,9 @@ def create_accounts_table():
                                           not
                                           null,
                                           code
-                                          text
-                                          not
-                                          null,
+                                          text,
                                           description
-                                          text
-                                          not
-                                          null,
+                                          text,
                                           currency
                                           text
                                           not
@@ -60,18 +57,12 @@ def create_accounts_table():
         connection.commit()
 
 
-def add_accounts():
+def add_accounts(accounts_file):
+
+
     with get_connection() as connection:
-        cursor = connection.cursor()
-
-        insert_account_query = '''
-                               insert into Accounts (type, path, name, code, description, currency, placeholder)
-                               values (?, ?, ?, ?, ?, ?, ?) \
-                               '''
-
-        account_data = [(fake.name(), fake.text(), fake.text(), fake.text(), fake.text(), fake.currency_code(), 'F') for
-                        _ in range(5)]
-        cursor.executemany(insert_account_query, account_data)
+        df = pd.read_csv(accounts_file)
+        df.to_sql('Accounts', connection, if_exists='append', index=False)
         connection.commit()
 
 

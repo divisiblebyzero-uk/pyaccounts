@@ -18,7 +18,8 @@ def drop_db():
 
 
 @cli.command()
-def load_accounts():
+@click.argument('accounts_file')
+def load_accounts(accounts_file):
     accsvc.add_accounts()
 
 
@@ -28,9 +29,12 @@ def print_accounts():
 
 
 @cli.command()
-def full_cycle():
+@click.argument('accounts_file')
+def full_cycle(accounts_file):
+    click.echo(f"Performing full cycle with accounts_file: {accounts_file}")
+    accsvc.drop_database()
     accsvc.init_database()
-    accsvc.add_accounts()
+    accsvc.add_accounts(accounts_file)
     accsvc.print_accounts()
 
 

@@ -1,3 +1,117 @@
-ASSET,Assets,Assets,A,Asset parent,GBP,T
-ASSET,Assets/CurrentAssets,Current Assets,CA,Current Assets,GBP,T
-BANK,Assets/CurrentAssets/CurrentAccountSole,Sole Bank Account,SBA,Sole Bank Account,GBP,F
+﻿type,path,name,code,description,currency,placeholder
+ASSET,Assets,Assets,,Assets,GBP,T
+ASSET,Assets:Current Assets,Current Assets,,Current Assets,GBP,T
+BANK,Assets:Current Assets:Cash,Cash,,Cash,GBP,F
+BANK,Assets:Current Assets:Current Account (Joint),Current Account (Joint),,Current Account (Joint),GBP,F
+BANK,Assets:Current Assets:Current Account (Sole),Current Account (Sole),,Current Account (Sole),GBP,F
+BANK,Assets:Current Assets:Savings Account,Savings Account,,Savings Account,GBP,F
+ASSET,Assets:Investments,Investments,,,GBP,T
+ASSET,Assets:Investments:ISAs,ISAs,,,GBP,F
+ASSET,Assets:Prepaid,Prepaid,,Prepaid,GBP,F
+ASSET,Assets:Prepaid:Car Service,Car Service,,Car Service,GBP,F
+LIABILITY,Liabilities,Liabilities,,Liabilities,GBP,T
+CREDIT,Liabilities:Credit Card,Credit Card,,Credit Card,GBP,F
+CREDIT,Liabilities:Credit Card:Visa Credit Card,Visa Credit Card,,Visa Credit Card,GBP,F
+LIABILITY,Liabilities:Loans,Loans,,Loans,GBP,F
+LIABILITY,Liabilities:Loans:Car Loan,Car Loan,,Car Loan,GBP,F
+LIABILITY,Liabilities:Mortgage,Mortgage,,Mortgage,GBP,F
+LIABILITY,Liabilities:Mortgage:House Mortgage,House Mortgage,,House Mortgage,GBP,F
+INCOME,Income,Income,,Income,GBP,T
+INCOME,Income:Interest Income,Interest Income,,Interest Income,GBP,F
+INCOME,Income:Interest Income:Checking Interest,Checking Interest,,Checking Interest,GBP,F
+INCOME,Income:Interest Income:Other Interest,Other Interest,,Other Interest,GBP,F
+INCOME,Income:Interest Income:Savings Interest,Savings Interest,,Savings Interest,GBP,F
+INCOME,Income:Misc Income,Misc Income,,,GBP,T
+INCOME,Income:Misc Income:Cheque,Cheque,,,GBP,F
+INCOME,Income:Misc Income:Gift Income,Gift Income,,,GBP,F
+EXPENSE,Income:Misc Income:HMRC,HMRC,,HMRC,GBP,F
+INCOME,Income:Salary,Salary,,Salary,GBP,F
+EXPENSE,Expenses,Expenses,,Expenses,GBP,T
+EXPENSE,Expenses:Charity,Charity,,Charity,GBP,F
+EXPENSE,Expenses:Charity:Battersea Dogs Home,Battersea Dogs Home,,Battersea Dogs Home,GBP,F
+EXPENSE,Expenses:Charity:Dogs Trust,Dogs Trust,,Dogs Trust,GBP,F
+EXPENSE,Expenses:Computer,Computer,,Computer,GBP,F
+EXPENSE,Expenses:Computer:Computer Equipment,Computer Equipment,,,GBP,F
+EXPENSE,Expenses:Computer:Computer Games,Computer Games,,Computer Games,GBP,F
+EXPENSE,Expenses:Computer:Service Subscriptions,Service Subscriptions,,Service Subscriptions,GBP,F
+EXPENSE,Expenses:Dining,Dining,,Dining,GBP,F
+EXPENSE,Expenses:Entertainment,Entertainment,,Entertainment,GBP,F
+EXPENSE,Expenses:Entertainment:Music/Movies,Music/Movies,,Music/Movies,GBP,F
+EXPENSE,Expenses:Entertainment:Recreation,Recreation,,Recreation,GBP,F
+EXPENSE,Expenses:Entertainment:TV,TV,,,GBP,F
+EXPENSE,Expenses:Fashion,Fashion,,Fashion,GBP,F
+EXPENSE,Expenses:Fashion:Clothes,Clothes,,Clothes,GBP,F
+EXPENSE,Expenses:Fashion:Hair,Hair,,Hair,GBP,F
+EXPENSE,Expenses:Fashion:Jewellery,Jewellery,,Jewellery,GBP,F
+EXPENSE,Expenses:Fashion:Shoes,Shoes,,Shoes,GBP,F
+EXPENSE,Expenses:Healthcare,Healthcare,,Healthcare,GBP,T
+EXPENSE,Expenses:Healthcare:Dental,Dental,,Dental,GBP,F
+EXPENSE,Expenses:Healthcare:Optician,Optician,,,GBP,F
+EXPENSE,Expenses:Hobbies,Hobbies,,Hobbies,GBP,F
+EXPENSE,Expenses:Hobbies:Antiquing,Antiquing,,Antiquing,GBP,F
+EXPENSE,Expenses:Hobbies:Audiobooks,Audiobooks,,Audiobooks,GBP,F
+EXPENSE,Expenses:Hobbies:Books,Books,,Books,GBP,F
+EXPENSE,Expenses:Hobbies:Cinema,Cinema,,Cinema,GBP,F
+EXPENSE,Expenses:Hobbies:Education,Education,,Education,GBP,F
+EXPENSE,Expenses:Hobbies:Garden,Garden,,Garden,GBP,F
+EXPENSE,Expenses:Hobbies:Gym,Gym,,Gym,GBP,F
+EXPENSE,Expenses:Hobbies:Music,Music,,Music,GBP,F
+EXPENSE,Expenses:Hobbies:Photography,Photography,,Photography,GBP,F
+EXPENSE,Expenses:Hobbies:Souvenirs,Souvenirs,,Souvenirs,GBP,F
+EXPENSE,Expenses:Hobbies:Tickets,Tickets,,Tickets,GBP,F
+EXPENSE,Expenses:Hobbies:Tourism,Tourism,,Tourism,GBP,F
+EXPENSE,Expenses:Home Improvements,Home Improvements,,Home Improvements,GBP,F
+EXPENSE,Expenses:Home Improvements:Contractors,Contractors,,Contractors,GBP,F
+EXPENSE,Expenses:Home Improvements:DIY,DIY,,DIY,GBP,F
+EXPENSE,Expenses:Home Improvements:Furniture,Furniture,,Furniture,GBP,F
+EXPENSE,Expenses:Home Improvements:Garden,Garden,,Garden,GBP,F
+EXPENSE,Expenses:Insurance,Insurance,,Insurance,GBP,F
+EXPENSE,Expenses:Insurance:Car Insurance,Car Insurance,,Car Insurance,GBP,F
+EXPENSE,Expenses:Insurance:Health Insurance,Health Insurance,,Health Insurance,GBP,F
+EXPENSE,Expenses:Insurance:Home Insurance,Home Insurance,,Home Insurance,GBP,F
+EXPENSE,Expenses:Insurance:Life Insurance,Life Insurance,,Life Insurance,GBP,F
+EXPENSE,Expenses:Professional Services,Professional Services,,Fees,GBP,F
+EXPENSE,Expenses:Professional Services:Bank Charges,Bank Charges,,Bank Charges,GBP,F
+EXPENSE,Expenses:Professional Services:Banking Fees,Banking Fees,,Banking Fees,GBP,F
+EXPENSE,Expenses:Professional Services:Financial Advice,Financial Advice,,Financial Advice,GBP,F
+EXPENSE,Expenses:Professional Services:Interest,Interest,,Interest,GBP,F
+EXPENSE,Expenses:Spouse,Spouse,,Spouse,GBP,F
+EXPENSE,Expenses:Subscriptions,Subscriptions,,Subscriptions,GBP,F
+EXPENSE,Expenses:Subscriptions:Disneyplus,Disneyplus,,Disneyplus,GBP,F
+EXPENSE,Expenses:Subscriptions:Netflix,Netflix,,,GBP,F
+EXPENSE,Expenses:Subscriptions:TV License,TV License,,TV License,GBP,F
+EXPENSE,Expenses:Sundries/Purchases,Sundries/Purchases,,,GBP,T
+EXPENSE,Expenses:Sundries/Purchases:Amazon,Amazon,,Amazon,GBP,F
+EXPENSE,Expenses:Sundries/Purchases:Drugs and Toiletries,Drugs and Toiletries,,Drugs and Toiletries,GBP,F
+EXPENSE,Expenses:Sundries/Purchases:Ebay,Ebay,,,GBP,F
+EXPENSE,Expenses:Sundries/Purchases:Flowers,Flowers,,Flowers,GBP,F
+EXPENSE,Expenses:Sundries/Purchases:Gifts,Gifts,,Gifts,GBP,F
+EXPENSE,Expenses:Sundries/Purchases:Groceries,Groceries,,Groceries,GBP,F
+EXPENSE,Expenses:Sundries/Purchases:Household,Household,,Household,GBP,F
+EXPENSE,Expenses:Sundries/Purchases:Leaving Dos,Leaving Dos,,,GBP,F
+EXPENSE,Expenses:Sundries/Purchases:Misc,Misc,,Misc,GBP,F
+EXPENSE,Expenses:Tax,Tax,,Tax,GBP,T
+EXPENSE,Expenses:Transport,Transport,,,GBP,T
+EXPENSE,Expenses:Transport:Car,Car,,Car,GBP,F
+EXPENSE,Expenses:Transport:Car:Car Tax,Car Tax,,Car Tax,GBP,F
+EXPENSE,Expenses:Transport:Car:Fuel,Fuel,,Fuel,GBP,F
+EXPENSE,Expenses:Transport:Car:Parking,Parking,,Parking,GBP,F
+EXPENSE,Expenses:Transport:Car:Penalty,Penalty,,Penalty,GBP,F
+EXPENSE,Expenses:Transport:Car:Repair and Maintenance,Repair and Maintenance,,Repair and Maintenance,GBP,F
+EXPENSE,Expenses:Transport:Car:Tolls,Tolls,,Tolls,GBP,F
+EXPENSE,Expenses:Transport:Public Transportation,Public Transportation,,Public Transportation,GBP,F
+EXPENSE,Expenses:Travel,Travel,,Travel,GBP,T
+EXPENSE,Expenses:Travel:Airfare,Airfare,,Airfare,GBP,F
+EXPENSE,Expenses:Travel:Hotel,Hotel,,Hotel,GBP,F
+EXPENSE,Expenses:Travel:International SIM,International SIM,,International SIM,GBP,F
+EXPENSE,Expenses:Travel:Travel Unclassified,Travel Unclassified,,,GBP,F
+EXPENSE,Expenses:Utilities,Utilities,,Utilities,GBP,F
+EXPENSE,Expenses:Utilities:BT,BT,,BT,GBP,F
+EXPENSE,Expenses:Utilities:Council Tax,Council Tax,,Council Tax,GBP,F
+EXPENSE,Expenses:Utilities:Electric,Electric,,Electric,GBP,F
+EXPENSE,Expenses:Utilities:Garbage collection,Garbage collection,,Garbage collection,GBP,F
+EXPENSE,Expenses:Utilities:Gas,Gas,,Gas,GBP,F
+EXPENSE,Expenses:Utilities:Gas and Electric,Gas and Electric,,Gas and Electric,GBP,F
+EXPENSE,Expenses:Utilities:Water,Water,,Water,GBP,F
+EQUITY,Equity,Equity,,Equity,GBP,T
+EQUITY,Equity:Opening Balances,Opening Balances,,Opening Balances,GBP,F
