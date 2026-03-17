@@ -1,31 +1,38 @@
 import click
 import accountservice as accsvc
 
+
 @click.group()
 def cli():
     pass
 
+
 @cli.command()
 def init_db():
-    accsvc.initDatabase()
+    accsvc.init_database()
+
 
 @cli.command()
 def drop_db():
-    accsvc.dropDatabase()
+    accsvc.drop_database()
+
 
 @cli.command()
 def load_accounts():
-    accsvc.addAccounts()
+    accsvc.add_accounts()
+
 
 @cli.command()
 def print_accounts():
-    accsvc.printAccounts()
+    accsvc.print_accounts()
+
 
 @cli.command()
 def full_cycle():
-    accsvc.initDatabase()
-    accsvc.addAccounts()
-    accsvc.printAccounts()
+    accsvc.init_database()
+    accsvc.add_accounts()
+    accsvc.print_accounts()
+
 
 if __name__ == '__main__':
     cli()
