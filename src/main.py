@@ -1,5 +1,7 @@
 import click
-import accountservice as accsvc
+import account_service as account_service
+import transaction_service as transaction_service
+import database_service as db
 
 
 @click.group()
@@ -7,35 +9,48 @@ def cli():
     pass
 
 
-@cli.command()
 def init_db():
-    accsvc.init_database()
+    click.echo("Initializing database...")
+    db.init_database()
 
 
-@cli.command()
 def drop_db():
-    accsvc.drop_database()
+    click.echo("Dropping database...")
+    db.drop_database()
 
 
-@cli.command()
-@click.argument('accounts_file')
 def load_accounts(accounts_file):
-    accsvc.add_accounts()
+    click.echo(f"Loading accounts from file {accounts_file}...")
+    account_service.add_accounts(accounts_file)
 
 
-@cli.command()
 def print_accounts():
-    accsvc.print_accounts()
+    click.echo("Printing accounts...")
+    account_service.print_accounts()
 
+def load_transactions(transactions_file, transaction_account_mapping_file, debit_account_path):
+    click.echo(f"Loading transactions from file {transactions_file} into account {debit_account_path} using mapping file {transaction_account_mapping_file}...")
+    transaction_service.add_transactions(transactions_file, transaction_account_mapping_file, debit_account_path)
+
+
+def print_transactions():
+    click.echo("Printing transactions...")
+    transaction_service.print_transactions()
 
 @cli.command()
-@click.argument('accounts_file')
-def full_cycle(accounts_file):
+@click.option('--accounts_file', default='../test/accounts.csv')
+@click.option('--transactions_file', default='../test/transactions.csv')
+@click.option('--transaction_account_mapping_file', default='../test/accountmappings.csv')
+@click.option('--debit_account_path', default='Assets:Current Assets:Current Account (Sole)')
+def full_cycle(accounts_file, transactions_file, transaction_account_mapping_file, debit_account_path):
     click.echo(f"Performing full cycle with accounts_file: {accounts_file}")
-    accsvc.drop_database()
-    accsvc.init_database()
-    accsvc.add_accounts(accounts_file)
-    accsvc.print_accounts()
+    drop_db()
+    init_db()
+    load_accounts(accounts_file)
+    print_accounts()
+
+    load_transactions(transactions_file, transaction_account_mapping_file, debit_account_path)
+    print_transactions()
 
 
 if __name__ == '__main__':

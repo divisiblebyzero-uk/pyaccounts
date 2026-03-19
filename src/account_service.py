@@ -1,23 +1,10 @@
-from faker import Faker
 import sqlite3
 import os
 import pandas as pd
-import csv
-
-fake = Faker(['en_GB'])
-dbname = '../test/accounting.db'
-
-
-def get_connection():
-    return sqlite3.connect(dbname)
-
-
-def init_database():
-    create_accounts_table()
-
+import database_service as db
 
 def create_accounts_table():
-    with get_connection() as connection:
+    with db.get_connection() as connection:
         cursor = connection.cursor()
         create_accounts_table_query = '''
                                       create table if not exists Accounts
@@ -58,16 +45,14 @@ def create_accounts_table():
 
 
 def add_accounts(accounts_file):
-
-
-    with get_connection() as connection:
+    with db.get_connection() as connection:
         df = pd.read_csv(accounts_file)
         df.to_sql('Accounts', connection, if_exists='append', index=False)
         connection.commit()
 
 
 def print_accounts():
-    with get_connection() as connection:
+    with db.get_connection() as connection:
         select_account_query = '''
                                select *
                                from Accounts; \
@@ -75,8 +60,12 @@ def print_accounts():
         df = pd.read_sql_query(select_account_query, connection)
 
         print("All accounts: ")
-        print(df);
+        print(df)
 
 
-def drop_database():
-    os.remove(dbname)
+def get_account_by_path(account_path):
+    with db.get_connection() as connection:
+        select_account_query = "select * from Accounts where path = ?"
+        cur = connection.cursor()
+        acct = cur.execute(select_account_query, (account_path,)).fetchall()[0]
+        return acct
