@@ -9,35 +9,15 @@ def create_accounts_table():
         create_accounts_table_query = '''
                                       create table if not exists Accounts
                                       (
-                                          id
-                                          integer
-                                          primary
-                                          key
-                                          autoincrement,
-                                          type
-                                          text
-                                          not
-                                          null,
-                                          path
-                                          text
-                                          not
-                                          null,
-                                          name
-                                          text
-                                          not
-                                          null,
-                                          code
-                                          text,
-                                          description
-                                          text,
-                                          currency
-                                          text
-                                          not
-                                          null,
-                                          placeholder
-                                          text
-                                          not
-                                          null
+                                          id integer primary key autoincrement,
+                                          type text not null,
+                                          path text not null,
+                                          name text not null,
+                                          code text,
+                                          description text,
+                                          currency text not null,
+                                          placeholder text not null,
+                                          normal integer not null
                                       ); \
                                       '''
         cursor.execute(create_accounts_table_query)

@@ -1,6 +1,7 @@
 import click
-import account_service as account_service
-import transaction_service as transaction_service
+import account_service
+import transaction_service
+import report_service
 import database_service as db
 
 
@@ -37,6 +38,12 @@ def print_transactions():
     click.echo("Printing transactions...")
     transaction_service.print_transactions()
 
+def reports():
+    click.echo("Checking transactions are balanced...")
+    report_service.check_balanced()
+    click.echo("Printing balance sheet...")
+    report_service.report_balance_sheet()
+
 @cli.command()
 @click.option('--accounts_file', default='../test/accounts.csv')
 @click.option('--transactions_file', default='../test/transactions.csv')
@@ -52,6 +59,7 @@ def full_cycle(accounts_file, transactions_file, transaction_account_mapping_fil
     load_transactions(transactions_file, transaction_account_mapping_file, debit_account_path)
     print_transactions()
 
+    reports()
 
 if __name__ == '__main__':
     cli()
